@@ -80,6 +80,7 @@ router.post(
 
       // Execute code
       const result = await DockerManager.executeCode(userId, code);
+      console.log(result);
 
       // Save code to MongoDB
       await updateUserCode(userId, code);
