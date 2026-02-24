@@ -420,6 +420,7 @@ export class DockerManager {
 
     const base64Code = Buffer.from(code, "utf8").toString("base64");
 
+    //Create a Index.js file
     const writeExec = await container.exec({
       Cmd: [
         "sh",
