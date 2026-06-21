@@ -22,7 +22,7 @@ User → Express API → Workspace Folder → Docker Container → Nix → npm i
 
 # 📁 Folder Structure
 
-mini-replit/ │ ├── api/ │   └── server.js │ ├── docker/ │   ├── Dockerfile │   └── flake.nix │ └── workspaces/
+mini-replit/ │ ├── api/ │ └── server.js │ ├── docker/ │ ├── Dockerfile │ └── flake.nix │ └── workspaces/
 
 ---
 
@@ -123,7 +123,7 @@ app.post("/create", async (req, res) => {
       version: "1.0.0",
       type: "module",
       main: "index.js",
-      dependencies
+      dependencies,
     };
 
     fs.writeFileSync(
@@ -217,7 +217,7 @@ When /run is called:
 1. Docker container starts
 2. Workspace mounted
 3. Nix loads Node 18
-4. If node\_modules missing → npm install
+4. If node_modules missing → npm install
 5. express + mongoose installed
 6. node index.js runs
 
@@ -229,7 +229,7 @@ We built:
 
 - Dynamic dependency injection per project
 - Automatic npm install inside container
-- Cached node\_modules (won't reinstall every run)
+- Cached node_modules (won't reinstall every run)
 - Resource-limited sandbox
 
 ---
@@ -257,4 +257,3 @@ You now have a dynamic mini Replit system where:
 - App runs in isolated container
 
 This is real sandbox architecture used in cloud IDE systems.
-
